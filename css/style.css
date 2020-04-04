@@ -1,0 +1,320 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.cover{
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: #b3cde0;
+    transition: 0.5s;
+}
+
+
+/* ------------- sidebar ----------------- */
+.sidebar {
+    visibility: hidden;
+    opacity: 0;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: black;
+    padding: 10vh 6vw 0vh 4vw;
+    overflow-x:hidden;
+    z-index: 2;
+    transition: 0.5s;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+.sidebar ul {
+    
+    list-style-type: none;
+}
+
+.sidebar li {
+    padding: 20px 0;
+}
+
+.sidebar li a:hover {
+    color: #005b96;
+}
+
+.sidebar .close-sidebar {
+    color:white;
+    position: absolute;
+    top: 5vh;
+    right: 22px;
+}
+
+.sidebar ul a {
+    color:white;
+    text-decoration: none;
+}
+
+
+/* ------------- sidebar cart ----------------- */
+.sidebar-cart {
+    visibility: hidden;
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    right: 0;
+    background-color: #f4f4f8;
+    padding: 10vh 2vw 0vh 2vw;
+    overflow-x:hidden;
+    z-index: 2;
+    transition: 0.5s;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+
+.sidebar-cart .close-sidebar-cart {
+    color:black;
+    position: absolute;
+    top: 5vh;
+    left: 22px;
+}
+
+.your-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.your-cart h3 {
+    padding-bottom: 5vh;
+}
+
+.your-cart .item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.your-cart .item img {
+    width: 15%;
+    flex-grow: 1;
+    object-fit: contain;
+}
+
+.your-cart .item .info {
+    padding-left: 10px;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.your-cart .item .info p {
+    padding: 5px 0;
+    margin: 0;
+}
+
+.your-cart .item .number {
+    flex-grow: 1;
+}
+
+.your-cart h3 {
+    padding-bottom: 10px;
+}
+
+.your-cart button {
+    user-select: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #005b96;
+    border: none;
+    color:white;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+/* ============header ================ */
+header {
+    padding: 2vh 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6497b1 ;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    color: #e6e6ea;
+}
+
+header a {
+    user-select: none;
+    text-decoration: none;
+    color: #e6e6ea;
+}
+
+header i {
+    font-size: 20px;
+}
+
+#menu-button {
+    transition: 0.5s;
+}
+
+/* =================== main =============== */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.banner {
+    max-width: 90vw;
+    min-width: 500px;
+    background: url('https://images.wallpaperscraft.com/image/interior_design_living_room_furniture_dining_room_97895_1920x1080.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: 'banner';
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+.banner-wrapper {
+    padding: 5vh 5vw;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-wrapper h3 {
+    text-transform: uppercase;
+    font-size: 3em;
+    color: #03396c ;
+}
+
+.banner-wrapper button {
+    user-select: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #005b96;
+    border: none;
+    color:white
+}
+
+.products {
+    grid-area: 'product';
+    display: block;
+    margin: 0;
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.products h1 {
+    font-size: 3rem;
+    padding: 5vh 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-product {
+    width: 100%;
+    display: grid;
+    grid-gap: 2vw;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product img {
+    width: 100%;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+.product .name-product {
+    padding: 2vh 0;
+    font-size: 2rem;
+    color: #03396c;
+}
+
+.price-product {
+    font-size: 1.5rem;
+    color: #005b96  ;
+}
+
+
+/* ===========footer =============== */
+
+.container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    width: 100%;
+    min-height: 30vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6497b1 ;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    padding: 5vh 20vw;
+    padding-bottom: 2vh;
+    color: #fff
+}
+
+.information {
+    padding-top: 1vh;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+.information li {
+    width: 100%;
+}
+
+.information a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+footer h3 {
+    width: 100%;
+    margin-top: 2vh;
+    font-size: 0.6rem;
+    line-height: 21px;
+}
